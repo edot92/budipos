@@ -8,10 +8,11 @@ File1=javascript_interface.htm
 File2=layoutMain.bal
 File3=web_chrome_client.htm
 File4=web_view_extras_demo.htm
-NumberOfLibraries=3
+NumberOfLibraries=4
 Library1=core
 Library2=webviewextras
 Library3=httputils2
+Library4=gesturedetector
 @EndOfDesignText@
 #Region Module Attributes
 	#FullScreen: False
@@ -42,7 +43,7 @@ End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
 	Activity.LoadLayout("layoutMain")
-	
+	Activity.Title="APLIKASI BUDI"
 	Activity.AddMenuItem("flingScroll test", "FlingScroll")
 	
 	WebView1.Height=100%y
@@ -69,6 +70,20 @@ Sub Activity_Resume
 End Sub
 Sub Timer1_Tick
    'Handle tick events
+     Dim job1, job2, job3 As HttpJob
+   job1.Initialize("Job1", Me)
+
+   'Send a GET request
+   job1.Download2("http://www.basic4ppc.com/print.php", _
+      Array As String("first key", "first value :)", "second key", "value 2"))
+
+   'Send a POST request
+   job2.Initialize("Job2", Me)
+   job2.PostString("http://www.basic4ppc.com/print.php", "first key=first value&key2=value2")
+
+   'Send a GET request
+   job3.Initialize("Job3", Me)
+   job3.Download("http://www.basic4ppc.com/forum/images/categories/android.png")
 End Sub
 Sub Activity_Pause (UserClosed As Boolean)
 
@@ -98,11 +113,11 @@ Sub ToggleWebViewHeight
 	End If
 End Sub
 
-Sub JobDone(job As HttpJob)
-    If job.JobName="Job1" And job.Success=False Then
+Sub JobDone (job_ As HttpJob)
+    If job_.JobName="Job1" And job_.Success=False Then
         ConnexioInternet = False
     Else
         ConnexioInternet = True
     End If
-    job.Release
+    job_.Release
 End Sub

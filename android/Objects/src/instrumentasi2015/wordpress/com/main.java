@@ -309,63 +309,96 @@ public class main extends Activity implements B4AActivity{
 	}
 
 public anywheresoftware.b4a.keywords.Common __c = null;
+public static anywheresoftware.b4a.objects.Timer _timer1 = null;
 public uk.co.martinpearman.b4a.webviewextras.WebViewExtras _mywebviewextras = null;
 public anywheresoftware.b4a.objects.WebViewWrapper _webview1 = null;
+public anywheresoftware.b4a.samples.httputils2.httpjob _job = null;
+public static boolean _connexiointernet = false;
+public anywheresoftware.b4a.samples.httputils2.httputils2service _httputils2service = null;
 
 public static boolean isAnyActivityVisible() {
     boolean vis = false;
 vis = vis | (main.mostCurrent != null);
 return vis;}
 public static String  _activity_create(boolean _firsttime) throws Exception{
- //BA.debugLineNum = 25;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
- //BA.debugLineNum = 26;BA.debugLine="Activity.LoadLayout(\"layoutMain\")";
+ //BA.debugLineNum = 28;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+ //BA.debugLineNum = 29;BA.debugLine="Activity.LoadLayout(\"layoutMain\")";
 mostCurrent._activity.LoadLayout("layoutMain",mostCurrent.activityBA);
- //BA.debugLineNum = 28;BA.debugLine="Activity.AddMenuItem(\"flingScroll test\", \"FlingSc";
+ //BA.debugLineNum = 30;BA.debugLine="Activity.Title=\"APLIKASI BUDI\"";
+mostCurrent._activity.setTitle((Object)("APLIKASI BUDI"));
+ //BA.debugLineNum = 31;BA.debugLine="Activity.AddMenuItem(\"flingScroll test\", \"FlingSc";
 mostCurrent._activity.AddMenuItem("flingScroll test","FlingScroll");
- //BA.debugLineNum = 30;BA.debugLine="WebView1.Height=100%y";
+ //BA.debugLineNum = 33;BA.debugLine="WebView1.Height=100%y";
 mostCurrent._webview1.setHeight(anywheresoftware.b4a.keywords.Common.PerYToCurrent((float) (100),mostCurrent.activityBA));
- //BA.debugLineNum = 31;BA.debugLine="WebView1.Width=100%x";
+ //BA.debugLineNum = 34;BA.debugLine="WebView1.Width=100%x";
 mostCurrent._webview1.setWidth(anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (100),mostCurrent.activityBA));
- //BA.debugLineNum = 32;BA.debugLine="WebView1.LoadUrl(\"http://192.168.1.7/budi/budi/p";
+ //BA.debugLineNum = 35;BA.debugLine="WebView1.LoadUrl(\"http://192.168.1.7/budi/budi/p";
 mostCurrent._webview1.LoadUrl("http://192.168.1.7/budi/budi/public");
- //BA.debugLineNum = 34;BA.debugLine="MyWebViewExtras.addJavascriptInterface(WebView1,";
+ //BA.debugLineNum = 37;BA.debugLine="MyWebViewExtras.addJavascriptInterface(WebView1,";
 mostCurrent._mywebviewextras.addJavascriptInterface(mostCurrent.activityBA,(android.webkit.WebView)(mostCurrent._webview1.getObject()),"B4A");
- //BA.debugLineNum = 37;BA.debugLine="MyWebViewExtras.addWebChromeClient(WebView1, \"\")";
+ //BA.debugLineNum = 40;BA.debugLine="MyWebViewExtras.addWebChromeClient(WebView1, \"\")";
 mostCurrent._mywebviewextras.addWebChromeClient(mostCurrent.activityBA,(android.webkit.WebView)(mostCurrent._webview1.getObject()),"");
- //BA.debugLineNum = 44;BA.debugLine="End Sub";
+ //BA.debugLineNum = 41;BA.debugLine="job.Initialize(\"Job1\", Me)";
+mostCurrent._job._initialize(processBA,"Job1",main.getObject());
+ //BA.debugLineNum = 42;BA.debugLine="job.Download(\"http://www.google.com\")";
+mostCurrent._job._download("http://www.google.com");
+ //BA.debugLineNum = 48;BA.debugLine="Timer1.Initialize(\"Timer1\", 1000) ' 1000 = 1 seco";
+_timer1.Initialize(processBA,"Timer1",(long) (1000));
+ //BA.debugLineNum = 49;BA.debugLine="Timer1.Enabled = True";
+_timer1.setEnabled(anywheresoftware.b4a.keywords.Common.True);
+ //BA.debugLineNum = 50;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
- //BA.debugLineNum = 50;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
- //BA.debugLineNum = 52;BA.debugLine="End Sub";
+ //BA.debugLineNum = 72;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+ //BA.debugLineNum = 74;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
- //BA.debugLineNum = 46;BA.debugLine="Sub Activity_Resume";
- //BA.debugLineNum = 48;BA.debugLine="End Sub";
+ //BA.debugLineNum = 52;BA.debugLine="Sub Activity_Resume";
+ //BA.debugLineNum = 54;BA.debugLine="End Sub";
 return "";
 }
 public static String  _flingscroll_click() throws Exception{
- //BA.debugLineNum = 58;BA.debugLine="Sub FlingScroll_Click";
- //BA.debugLineNum = 59;BA.debugLine="MyWebViewExtras.flingScroll(WebView1, 0, 500)";
+ //BA.debugLineNum = 80;BA.debugLine="Sub FlingScroll_Click";
+ //BA.debugLineNum = 81;BA.debugLine="MyWebViewExtras.flingScroll(WebView1, 0, 500)";
 mostCurrent._mywebviewextras.flingScroll((android.webkit.WebView)(mostCurrent._webview1.getObject()),(int) (0),(int) (500));
- //BA.debugLineNum = 60;BA.debugLine="End Sub";
+ //BA.debugLineNum = 82;BA.debugLine="End Sub";
 return "";
 }
 public static String  _getstring() throws Exception{
- //BA.debugLineNum = 54;BA.debugLine="Sub GetString As String";
- //BA.debugLineNum = 55;BA.debugLine="Return \"This is a string from the B4A demo code\"";
+ //BA.debugLineNum = 76;BA.debugLine="Sub GetString As String";
+ //BA.debugLineNum = 77;BA.debugLine="Return \"This is a string from the B4A demo code\"";
 if (true) return "This is a string from the B4A demo code";
- //BA.debugLineNum = 56;BA.debugLine="End Sub";
+ //BA.debugLineNum = 78;BA.debugLine="End Sub";
 return "";
 }
 public static String  _globals() throws Exception{
- //BA.debugLineNum = 17;BA.debugLine="Sub Globals";
- //BA.debugLineNum = 20;BA.debugLine="Dim MyWebViewExtras As WebViewExtras";
+ //BA.debugLineNum = 18;BA.debugLine="Sub Globals";
+ //BA.debugLineNum = 21;BA.debugLine="Dim MyWebViewExtras As WebViewExtras";
 mostCurrent._mywebviewextras = new uk.co.martinpearman.b4a.webviewextras.WebViewExtras();
- //BA.debugLineNum = 21;BA.debugLine="Dim WebView1 As WebView";
+ //BA.debugLineNum = 22;BA.debugLine="Dim WebView1 As WebView";
 mostCurrent._webview1 = new anywheresoftware.b4a.objects.WebViewWrapper();
- //BA.debugLineNum = 23;BA.debugLine="End Sub";
+ //BA.debugLineNum = 24;BA.debugLine="Dim job As HttpJob";
+mostCurrent._job = new anywheresoftware.b4a.samples.httputils2.httpjob();
+ //BA.debugLineNum = 25;BA.debugLine="Dim ConnexioInternet As Boolean";
+_connexiointernet = false;
+ //BA.debugLineNum = 26;BA.debugLine="End Sub";
+return "";
+}
+public static String  _jobdone(anywheresoftware.b4a.samples.httputils2.httpjob _job_) throws Exception{
+ //BA.debugLineNum = 100;BA.debugLine="Sub JobDone (job_ As HttpJob)";
+ //BA.debugLineNum = 101;BA.debugLine="If job_.JobName=\"Job1\" And job_.Success=False";
+if ((_job_._jobname).equals("Job1") && _job_._success==anywheresoftware.b4a.keywords.Common.False) { 
+ //BA.debugLineNum = 102;BA.debugLine="ConnexioInternet = False";
+_connexiointernet = anywheresoftware.b4a.keywords.Common.False;
+ }else {
+ //BA.debugLineNum = 104;BA.debugLine="ConnexioInternet = True";
+_connexiointernet = anywheresoftware.b4a.keywords.Common.True;
+ };
+ //BA.debugLineNum = 106;BA.debugLine="job_.Release";
+_job_._release();
+ //BA.debugLineNum = 107;BA.debugLine="End Sub";
 return "";
 }
 
@@ -374,7 +407,8 @@ public static void initializeProcessGlobals() {
     if (main.processGlobalsRun == false) {
 	    main.processGlobalsRun = true;
 		try {
-		        main._process_globals();
+		        anywheresoftware.b4a.samples.httputils2.httputils2service._process_globals();
+main._process_globals();
 		
         } catch (Exception e) {
 			throw new RuntimeException(e);
@@ -382,30 +416,56 @@ public static void initializeProcessGlobals() {
     }
 }public static String  _process_globals() throws Exception{
  //BA.debugLineNum = 12;BA.debugLine="Sub Process_Globals";
- //BA.debugLineNum = 15;BA.debugLine="End Sub";
+ //BA.debugLineNum = 15;BA.debugLine="Dim Timer1 As Timer";
+_timer1 = new anywheresoftware.b4a.objects.Timer();
+ //BA.debugLineNum = 16;BA.debugLine="End Sub";
 return "";
 }
 public static String  _showtoast(String _message) throws Exception{
- //BA.debugLineNum = 62;BA.debugLine="Sub ShowToast(Message As String)";
- //BA.debugLineNum = 64;BA.debugLine="End Sub";
+ //BA.debugLineNum = 84;BA.debugLine="Sub ShowToast(Message As String)";
+ //BA.debugLineNum = 86;BA.debugLine="End Sub";
+return "";
+}
+public static String  _timer1_tick() throws Exception{
+anywheresoftware.b4a.samples.httputils2.httpjob _job1 = null;
+anywheresoftware.b4a.samples.httputils2.httpjob _job2 = null;
+anywheresoftware.b4a.samples.httputils2.httpjob _job3 = null;
+ //BA.debugLineNum = 55;BA.debugLine="Sub Timer1_Tick";
+ //BA.debugLineNum = 57;BA.debugLine="Dim job1, job2, job3 As HttpJob";
+_job1 = new anywheresoftware.b4a.samples.httputils2.httpjob();
+_job2 = new anywheresoftware.b4a.samples.httputils2.httpjob();
+_job3 = new anywheresoftware.b4a.samples.httputils2.httpjob();
+ //BA.debugLineNum = 58;BA.debugLine="job1.Initialize(\"Job1\", Me)";
+_job1._initialize(processBA,"Job1",main.getObject());
+ //BA.debugLineNum = 61;BA.debugLine="job1.Download2(\"http://www.basic4ppc.com/print.";
+_job1._download2("http://www.basic4ppc.com/print.php",new String[]{"first key","first value :)","second key","value 2"});
+ //BA.debugLineNum = 65;BA.debugLine="job2.Initialize(\"Job2\", Me)";
+_job2._initialize(processBA,"Job2",main.getObject());
+ //BA.debugLineNum = 66;BA.debugLine="job2.PostString(\"http://www.basic4ppc.com/print";
+_job2._poststring("http://www.basic4ppc.com/print.php","first key=first value&key2=value2");
+ //BA.debugLineNum = 69;BA.debugLine="job3.Initialize(\"Job3\", Me)";
+_job3._initialize(processBA,"Job3",main.getObject());
+ //BA.debugLineNum = 70;BA.debugLine="job3.Download(\"http://www.basic4ppc.com/forum/i";
+_job3._download("http://www.basic4ppc.com/forum/images/categories/android.png");
+ //BA.debugLineNum = 71;BA.debugLine="End Sub";
 return "";
 }
 public static String  _togglewebviewheight() throws Exception{
 int _i = 0;
- //BA.debugLineNum = 66;BA.debugLine="Sub ToggleWebViewHeight";
- //BA.debugLineNum = 67;BA.debugLine="Dim i As Int";
+ //BA.debugLineNum = 88;BA.debugLine="Sub ToggleWebViewHeight";
+ //BA.debugLineNum = 89;BA.debugLine="Dim i As Int";
 _i = 0;
- //BA.debugLineNum = 68;BA.debugLine="i=WebView1.Height";
+ //BA.debugLineNum = 90;BA.debugLine="i=WebView1.Height";
 _i = mostCurrent._webview1.getHeight();
- //BA.debugLineNum = 69;BA.debugLine="If i<>100 Then";
+ //BA.debugLineNum = 91;BA.debugLine="If i<>100 Then";
 if (_i!=100) { 
- //BA.debugLineNum = 70;BA.debugLine="WebView1.Height=100";
+ //BA.debugLineNum = 92;BA.debugLine="WebView1.Height=100";
 mostCurrent._webview1.setHeight((int) (100));
  }else {
- //BA.debugLineNum = 73;BA.debugLine="WebView1.Height=100%y/2";
+ //BA.debugLineNum = 95;BA.debugLine="WebView1.Height=100%y/2";
 mostCurrent._webview1.setHeight((int) (anywheresoftware.b4a.keywords.Common.PerYToCurrent((float) (100),mostCurrent.activityBA)/(double)2));
  };
- //BA.debugLineNum = 76;BA.debugLine="End Sub";
+ //BA.debugLineNum = 98;BA.debugLine="End Sub";
 return "";
 }
 }
