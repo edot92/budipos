@@ -37,7 +37,7 @@ class HomeController extends Controller
        $name =$request->input('name');
        $email =$request->input('email');
        $pass =$request->input('password');
-       $token = str_random(10);
+       $token = $request->input('_token');
 
        $userr = new User;
 
