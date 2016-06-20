@@ -13,9 +13,9 @@
 
 $factory->define(App\User::class, function (Faker\Generator $faker) {
     return [
-        'name' => $faker->name,
-        'email' => $faker->safeEmail,
-        'password' => bcrypt(str_random(10)),
+         'name' => 'budi',
+            'email' => 'budi@gmail.com',
+        'password' => bcrypt('pulojahe'),
         'remember_token' => str_random(10),
     ];
 });
@@ -30,6 +30,8 @@ $factory->define(App\Remis::class, function (Faker\Generator $faker) {
         'keterangan' => $faker->text,
     ];
 });
+
+
 
       // $max =2000;
 
