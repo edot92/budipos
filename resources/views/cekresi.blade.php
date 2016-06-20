@@ -173,7 +173,7 @@
 
                 var tb_asal = document.getElementById('tb_asal');
                 var tb_traking = document.getElementById('tb_traking');
-                alert(y.riwayat.length);
+               // alert(y.riwayat.length);
                 var val_tb_traking=[];
                     for(i=0;i<y.riwayat.length;i++){
                     val_tb_traking=y.riwayat[i];
