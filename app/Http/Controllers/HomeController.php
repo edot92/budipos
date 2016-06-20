@@ -49,6 +49,7 @@ class HomeController extends Controller
 
 
         $userr->save();
+      return view('auth.register2');
        //return view('auth.register');
     }
 }
