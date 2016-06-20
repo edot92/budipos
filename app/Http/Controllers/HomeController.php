@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use App\User;
 class HomeController extends Controller
 {
     /**
@@ -35,10 +36,19 @@ class HomeController extends Controller
        // return "f";
        $name =$request->input('name');
        $email =$request->input('email');
-       $name =$request->input('password');
-       $name =bcrypt($request->input('_token'));
+       $pass =$request->input('password');
+       $token = str_random(10);
 
-       return $request->all();
-       // return view('auth.register');
+       $userr = new User;
+
+        $userr->name = $name;
+        $userr->email = $email;
+        $userr->password = bcrypt($pass);
+        $userr->remember_token = $token;
+
+
+
+        $userr->save();
+       //return view('auth.register');
     }
 }
