@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 Route::auth();
 
+Route::get('/t1','HomeController@t');
 Route::get('/home', 'HomeController@index');
 Route::get('/cekresi', function () {
     return view('cekresi');
@@ -25,3 +26,6 @@ Route::get('/register2', 'HomeController@register');
 Route::post('/register_store', 'HomeController@register_store');
 Route::resource('remis', 'RemisController');
 Route::resource('remisguest', 'RemisguestController');
+Route::resource('posts', 'PostsController');
+Route::resource('selisih_remis', 'Selisih_remisController');
+Route::resource('selisih_remisguest', 'Selisih_remisguestController');

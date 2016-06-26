@@ -56,15 +56,25 @@
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/remisguest') }}">Remis Guest</a></li>
                 </ul>
+                     <ul class="nav navbar-nav">
+                    <li><a href="{{ url('/selisih_remisguest') }}">selisih Remis Guest</a></li>
+                </ul>
                 @else
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/remis') }}">Remis Admin</a></li>
                 </ul>
+             
+           
+            
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ url('/selisih_remis') }}">selisih Remis Admin</a></li>
+                </ul>
+
                   <ul class="nav navbar-nav">
                     <li><a href="{{ url('/register2') }}">Register</a></li>
                 </ul>
+              
                 @endif
-
 
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">

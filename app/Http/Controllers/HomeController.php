@@ -27,6 +27,12 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+public function t(){
+
+      return "aa";
+    }
+
       public function register()
     {
         return view('auth.register2');
