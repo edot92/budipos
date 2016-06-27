@@ -1,3 +1,4 @@
+
 {
     "name": "laravel/laravel",
     "description": "The Laravel Framework.",
@@ -8,7 +9,8 @@
         "php": ">=5.5.9",
         "laravel/framework": "5.2.*",
         "laravelcollective/html": "^5.2",
-        "appzcoder/crud-generator": "^1.0"
+        "appzcoder/crud-generator": "^1.0",
+        "maatwebsite/excel": "~2.1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

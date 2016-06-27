@@ -16,6 +16,12 @@ Route::get('/', function () {
 });
 
 Route::auth();
+// excel
+Route::get('excel', 'MaatwebsiteDemoController@importExport');
+Route::get('downloadExcel/{type}', 'MaatwebsiteDemoController@downloadExcel');
+Route::post('importExcel', 'MaatwebsiteDemoController@importExcel');
+// end excel
+
 
 Route::get('/t1','HomeController@t');
 Route::get('/home', 'HomeController@index');
@@ -29,3 +35,4 @@ Route::resource('remisguest', 'RemisguestController');
 Route::resource('posts', 'PostsController');
 Route::resource('selisih_remis', 'Selisih_remisController');
 Route::resource('selisih_remisguest', 'Selisih_remisguestController');
+

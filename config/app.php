@@ -160,6 +160,9 @@ return [
           Collective\Html\HtmlServiceProvider::class,
 Appzcoder\CrudGenerator\CrudGeneratorServiceProvider::class,
 
+
+Maatwebsite\Excel\ExcelServiceProvider::class,
+
     ],
 
     /*
@@ -207,6 +210,7 @@ Appzcoder\CrudGenerator\CrudGeneratorServiceProvider::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Form'      => Collective\Html\FormFacade::class,
     'HTML'      => Collective\Html\HtmlFacade::class,
+    'Excel' => Maatwebsite\Excel\Facades\Excel::class,
 
     ],
 
