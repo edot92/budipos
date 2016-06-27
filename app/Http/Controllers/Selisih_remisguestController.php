@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\selisih_remi;
+use App\Selisih_remi;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Session;
@@ -19,7 +19,7 @@ class Selisih_remisguestController extends Controller
      */
     public function index()
     {
-        $selisih_remisguest = selisih_remi::paginate(15);
+        $selisih_remisguest = Selisih_remi::paginate(15);
 
         return view('selisih_remisguest.index', compact('selisih_remisguest'));
     }
