@@ -28,6 +28,7 @@
                     <td>{{ $item->uang_non_tunai }}</td>
                     <td>{{ $item->jumlah_uang_tunai }}</td>
                     <td>{{ $item->jumlah_uang_non_tunai }}</td>
+                     <td>
                         <a href="{{ url('/selisih_remis/' . $item->id) }}" class="btn btn-success btn-xs" title="View Selisih_remi"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"/></a>
                         <a href="{{ url('/selisih_remis/' . $item->id . '/edit') }}" class="btn btn-primary btn-xs" title="Edit Selisih_remi"><span class="glyphicon glyphicon-pencil" aria-hidden="true"/></a>
                         {!! Form::open([
