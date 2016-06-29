@@ -5,13 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use Input;
+
 use App\Remi;
 use DB;
 use Excel;
 class MaatwebsiteDemoController extends Controller
 {
     //
+       public function __construct()
+    {
+        $this->middleware('auth');
+    }
 	
 	public function importExport()
 	{
@@ -27,23 +31,31 @@ class MaatwebsiteDemoController extends Controller
 	        });
 		})->download($type);
 	}
-	public function importExcel()
-	{
-		if(Input::hasFile('import_file')){
-			$path = Input::file('import_file')->getRealPath();
+	public function importExcel(Request $request)
+    {
+		if($request->hasFile('import_file')){
+	
+    		
+			$path = $request->file('import_file');
+		
+	   
 			$data = Excel::load($path, function($reader) {
 			})->get();
+	
 			if(!empty($data) && $data->count()){
+			
 				foreach ($data as $key => $value) {
-					$insert[] = ['id' => $value->id, 'denomasi' => $value->denomasi
-					, 'jumlah' => $value->jumlah, 'total' => $value->total, 'keterangan' => $value->keterangan];
+					$insert[] = ['id' => $value->id, 'nama_kantor' => $value->namakantor
+					, 'uang_tunai' => $value->uang_tunai, 'uang_non_tunai' => $value->uang_non_tunai, 'jumlah_uang_tunai' => $value->jumlah_uang_tunai, 'jumlah_uang_non_tunai' => $value->jumlah_uang_non_tunai];
 				}
 				if(!empty($insert)){
-					DB::table('Remis')->insert($insert);
-					dd('Insert Record successfully.');
+					DB::table('Selisih_remis')->insert($insert);
+					return redirect()->route('selisih_remis.index');
+					//dd('Insert Record successfully.');
 				}
 			}
 		}
 		return back();
 	}
+	
 }

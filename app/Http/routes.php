@@ -36,3 +36,9 @@ Route::resource('posts', 'PostsController');
 Route::resource('selisih_remis', 'Selisih_remisController');
 Route::resource('selisih_remisguest', 'Selisih_remisguestController');
 
+
+Route::resource('coupure3', 'coupure3Controller');
+
+Route::resource('coupure3guest', 'coupure3guestController');
+Route::resource('coupure6', 'coupure6Controller');
+Route::resource('coupure6guest', 'coupure6guestController');

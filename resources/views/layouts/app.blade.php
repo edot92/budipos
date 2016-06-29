@@ -49,20 +49,36 @@
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/home') }}">Home</a></li>
                 </ul>
-                <ul class="nav navbar-nav">
+               {{--  <ul class="nav navbar-nav">
                     <li><a href="{{ url('/cekresi') }}">CEK RESI</a></li>
-                </ul>
+                </ul> --}}
                 @if (Auth::guest())
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/remisguest') }}">Remis Guest</a></li>
                 </ul>
+
+                 <ul class="nav navbar-nav">
+                    <li><a href="{{ url('/coupure3guest') }}">coupure3Guest</a></li>
+                </ul>
+
+                 <ul class="nav navbar-nav">
+                 <li><a href="{{ url('/coupure6guest') }}">coupure6Guest</a></li>
+                 </ul>
                      <ul class="nav navbar-nav">
                     <li><a href="{{ url('/selisih_remisguest') }}">selisih Remis Guest</a></li>
+
                 </ul>
                 @else
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/remis') }}">Remis Admin</a></li>
                 </ul>
+                        <ul class="nav navbar-nav">
+                    <li><a href="{{ url('/coupure3') }}">coupure3k</a></li>
+                </ul>
+                     <ul class="nav navbar-nav">
+                    <li><a href="{{ url('/coupure6') }}">coupure6</a></li>
+                </ul>
+             
              
            
             
